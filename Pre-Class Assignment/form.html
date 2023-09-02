@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <input type="text" id="myInput">
+    <button id="myButton" onclick="Click()">Submit</button>
+    <h2 id="myText">Entered Value: </h2>
+</body>
+<script>
+    function Click(){
+        let inp = document.getElementById("myInput");
+        let text = document.getElementById("myText");
+        alert(inp.value);
+        text.innerText = "Entered Value: " + inp.value;
+    }
+</script>
+</html>
