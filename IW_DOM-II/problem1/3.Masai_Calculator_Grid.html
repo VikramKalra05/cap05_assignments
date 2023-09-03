@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai Calculator</title>
+    <style>
+        h1{
+            text-align: center;
+            font-size: 50px;
+            margin: 30px;
+            color: #007f7f;
+            font-weight: bold;
+        }
+        #parent{
+            width: 28%;
+            /* border: 2px solid red; */
+            height: 550px;
+            margin: auto;
+            margin-top: 70px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            margin-bottom: 100px;
+            padding-top: 25px;
+        }
+        #parent>div:first-child{
+            /* border: 2px solid red; */
+            width: 70%;
+            margin: auto;
+            height: 80px;
+            margin-top: 40px;
+            border-radius: 16px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        #parent>div:last-child{
+            display: grid;
+            margin: auto;
+            width: 70%;
+            margin-top: 30px;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(4,1fr);
+            gap: 10px;
+            height: 60%;
+            
+        }
+        #parent>div>div{
+            /* border:1px solid red; */
+            border-radius: 10px;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            font-size: 22px;
+            font-weight: bold;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        
+        button{
+            height: 75px;
+            width: 58px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Masai Calulator</h1>
+    <div id="parent">
+        <div>
+            <h1 id="display"></h1>
+        </div>
+        <div>
+            <div><button>1</button></div>
+            <div><button>2</button></div>
+            <div><button>3</button></div>
+            <div><button id="add">+</button></div>
+            <div><button>4</button></div>
+            <div><button>5</button></div>
+            <div><button>6</button></div>
+            <div><button id="sub">-</button></div>
+            <div><button>7</button></div>
+            <div><button>8</button></div>
+            <div><button>9</button></div>
+            <div><button id="multiply">x</button></div>
+            <div><button id="clear">C</button></div>
+            <div><button>0</button></div>
+            <div><button id="equal">=</button></div>
+            <div><button id="divide">/</button></div>
+        </div>
+    </div>
+</body>
+<script>
+    let disp = document.getElementById("display");
+    let btn = document.querySelectorAll("button");
+    let equal = document.getElementById("equal");
+    let clear = document.getElementById("clear")
+    let result = "";
+    let num1 = "";
+    let num2 = "";
+    let operator = "";
+    let isNum1 = true;
+
+    for(let i=0; i<btn.length; i++){
+        if(Number(btn[i].innerText)>=0 && Number(btn[i].innerText)<=9){
+            
+                btn[i].addEventListener("click", function(){
+                    if(isNum1){
+                        num1 += btn[i].innerText;
+                        disp.innerText = num1;
+                    }else{
+                        num2 += btn[i].innerText;
+                        disp.innerText = num2;
+                    }
+                })
+            
+        }
+        
+        else if(btn[i].innerText == "="){
+            equal.addEventListener("click",function(){
+                disp.innerText = calculate(num1,num2,operator);
+            })
+        
+        }else if(btn[i].innerText == "C"){
+            clear.addEventListener("click",function(){
+                num1 = "";
+                num2 = "";
+                operator = "";
+                disp.innerText = "";
+                isNum1 = true;
+            }) 
+
+        }else{
+            btn[i].addEventListener("click", function(){
+                isNum1 = false;
+                operator = btn[i].innerText;
+            })
+        }
+    }
+
+    function calculate(num1,num2,operator){
+        switch(operator){
+            case "+" :
+                return Number(num1) + Number(num2);
+            case "-" :
+                return Number(num1) - Number(num2);
+            case "x" :
+                return Number(num1) * Number(num2);
+            case "/" :
+                return Number(num1) / Number(num2);
+        }
+    }
+
+
+
+</script>
+</html>
