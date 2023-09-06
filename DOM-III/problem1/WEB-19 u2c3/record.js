@@ -8,12 +8,9 @@ let eExp = document.getElementById("exp");
 let eEmail = document.getElementById("email");
 let eMbl = document.getElementById("mbl");
 
-
-
 let record = [];
 myForm.addEventListener("submit", function(event){
     event.preventDefault();
-    let del;
 
     let data = {
         empName : eName.value,
