@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account Management</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let allAccounts = [];
+
+    function BankAccount(custAccountNumber, custName, custType, custBalance){
+        this.accountNumber = custAccountNumber;
+        this.name = custName;
+        this.type = custType;
+        this.balance = custBalance;
+        this.active =  true;
+
+        this.deposit = function(amount){
+            this.balance += amount;
+            console.log("Amount Deposited Successfully")
+        }
+
+        this.withdraw = function(amount){
+            this.balance -= amount;
+            console.log("Amount Withdrawn Successfully"); 
+        }
+
+        this.checkBalance = function(){
+            console.log("Current Balance - " + this.balance);
+        }
+
+        this.isActive = function(){
+            if(this.active){
+                console.log("Active")
+            }else{
+                console.log("Not Active");
+            }
+        }
+
+        allAccounts.push(this);
+    } 
+
+    function getTotalBalance(){
+        let total = 0;
+        for(let i=0; i<allAccounts.length; i++){
+            total += allAccounts[i].balance;
+        }
+        return total;
+    }
+
+    let cust1 = new BankAccount(786761448641347, "Vikram", "savings", 50000);
+    let cust2 = new BankAccount(138671346878134, "Kaif", "savings", 100000);
+    let cust3 = new BankAccount(188713148418761, "Shruti", "savings", 2000);
+    let cust4 = new BankAccount(748971448487684, "Udit", "savings", 45000);
+
+
+    cust1.withdraw(35000);
+    cust1.deposit(2000);
+    cust1.checkBalance();
+    cust3.isActive();
+    cust4.withdraw(35000);
+    cust3.deposit(5000);
+
+    console.log("Total Balance of all Accounts is = " + getTotalBalance())
+</script>
+</html>

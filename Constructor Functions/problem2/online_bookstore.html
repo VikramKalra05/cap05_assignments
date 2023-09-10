@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online BookStore</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    library = [];
+
+    function Author(authorName, authorDOB, authorNationality){
+        this.name = authorName;
+        this.dob = authorDOB;
+        this.nationality = authorNationality;
+    }
+
+    function Book(bookTitle, authorDetails, bookGenre, bookPrice){
+        this.title = bookTitle;
+        this.author = authorDetails;
+        this.genre = bookGenre;
+        this.price = bookPrice;
+
+        this.getBookInfo = function(){
+            // print the book's title, author's name, genre, and price
+            console.log("Book Title - " + this.title);
+            console.log("Author's Name - " + this.author.name);
+            console.log("Genre - " + this.genre);
+            console.log("Price - " + this.price);
+        } 
+
+        library.push(this);
+
+    }
+
+    let author1 = new Author("JK Rowling", 1965, "British");
+    let author2 = new Author("Murakami", 1949, "Japanese");
+    let author3 = new Author("Jane Austen", 1775, "British");
+
+    let book1 = new Book("Harry Potter", author1, "Fantasy", 300);
+    let book2 = new Book("Norwegian Wood", author2, "Romance", 500);
+    let book3 = new Book("Pride and Prejudice", author3, "Fiction", 400);
+
+    for(let i=0; i<library.length; i++){
+        library[i].getBookInfo();
+        console.log("****************");
+    }
+
+</script>
+
+</html>
