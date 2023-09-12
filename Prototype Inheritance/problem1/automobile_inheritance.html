@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tata's R&D</title>
+</head>
+<body>
+    <h1>Tata's R&D Department</h1>
+</body>
+
+<script>
+    function carProto(engine, wheels, dashboard, pedals, seats, chassisNumber){
+        let obj = {};
+
+        obj.engine = engine;
+        obj.wheels = wheels;
+        obj.dashboard = dashboard;
+        obj.pedals = pedals;
+        obj.seats = seats;
+        obj.chassisNumber = chassisNumber;
+
+        obj.engineOn = function(){
+            console.log("Engine On");
+        }
+
+        obj.engineOff = function(){
+            console.log("Engine Off")
+        }
+
+        return obj;
+    }
+
+    let model1 = {};
+    model1.name = "Tata Nexon";
+    Object.setPrototypeOf(model1, carProto("V8",4,"steering wheel",3,5,"HVEW416418643"));
+
+    model1.engineOn();
+
+</script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation Game</title>
+</head>
+<body>
+    <h1>Simulation Game</h1>
+</body>
+<script>
+
+    let vehicleFunctions = {
+        accelerate : function(){
+            console.log("Vehicle is accelerating...");
+        },
+        brake : function(){
+            console.log("Vehicle is slowing down...");
+        },
+        refuel : function(){
+            console.log("Vehicle is refueling...")
+        }
+    }
+
+    function vehicleConstructor(brand, model, speed, fuelType){
+        let obj = {};
+
+        obj.brand = brand;
+        obj.model = model;
+        obj.speed = speed;
+        obj.fuelType = fuelType;
+
+        Object.setPrototypeOf(obj, vehicleFunctions)
+
+        return obj;
+    }
+
+    function carConstructor(numberOfWheels, brand, model, speed, fuelType){
+        let obj = {};
+        
+        obj = vehicleConstructor(brand, model, speed, fuelType);
+
+        obj.wheels = numberOfWheels;
+        obj.honk = function(){
+            console.log("Honk Honk...")
+        }
+
+        return obj;
+    }
+
+    function planeConstructor(numberOfEngines, hasLandingGear, brand, model, speed, fuelType){
+        let obj = {};
+        
+        obj = vehicleConstructor(brand, model, speed, fuelType);
+
+        obj.numberOfEngines = numberOfEngines;
+        obj.hasLandingGear = hasLandingGear;
+        obj.takeOff = function(){
+            console.log("The plane is taking off...")
+        }
+
+        return obj;
+    }
+
+    let car1 = new carConstructor(4,"Toyota", "Fortuner", 140, "Diesel");
+    let plane1 = new planeConstructor(2, true,"Airbus", "Airbus - 121", 420, "Diesel");
+
+    car1.refuel();
+    plane1.brake();
+
+</script>
+</html>
