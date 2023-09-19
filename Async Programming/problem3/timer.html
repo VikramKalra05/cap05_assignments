@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+<style>
+    *{
+        text-align: center;
+        margin: 20px;
+    }
+    button{
+        padding: 10px;
+    }
+</style>
+<body>
+    <h1>TIMER</h1>
+    <input type="text" placeholder="Hours" id="hours">
+    <input type="text" placeholder="Minutes" id="minutes">
+    <input type="text" placeholder="Seconds" id="seconds">
+    <br>
+    <h1 id="display">0</h1>
+    <div>
+        <button onclick="start()">Start</button>
+        <button onclick="pause()">Pause</button>
+        <button onclick="reset()">Reset</button>
+    </div>
+</body>
+<script>
+    let time = document.getElementById("display");
+    let hrs = Number(document.getElementById("hours").value);
+    let min = Number(document.getElementById("minutes").value);
+    let sec = Number(document.getElementById("seconds").value);
+    let isRunning = false;
+    let myInterval;
+
+    if(hrs==undefined){
+        hrs = 0;
+    }
+    if(min==undefined){
+        min = 0;
+    } 
+    if(sec==undefined){
+        sec = 0;
+    }
+
+    function start(){
+        if(isRunning==false){
+            isRunning = true;
+            myInterval = setInterval(function (){
+                if(sec>=1){
+                    sec--;
+                    time.textContent = sec;
+                }                
+                if(min>0 && sec==0){
+                    min--;
+                    time.textContent = min + ":" + sec;
+                    sec = 60;
+                }else if(min>0){
+                    time.textContent = min + ":" + sec;
+                }
+                if(hrs>0 && min==0 && sec==0){
+                    hrs--;
+                    time.textContent = hrs + ":" + min + ":" + sec;
+                    min = 60;
+                }else if(hrs>0){
+                    time.textContent = hrs + ":" + min + ":" + sec;
+                }   
+                if(hrs==0 && min==0 && sec==0){
+                    time.textContent = "Time's Up!"
+                }
+            },1000);
+            
+        }
+    }
+
+    function pause(){
+        clearInterval(myInterval);
+        isRunning = false;
+    }
+
+    function reset(){
+        clearInterval(myInterval);
+        isRunning = false;
+        time.textContent = 0;
+        hrs = Number(document.getElementById("hours").value);
+        min = Number(document.getElementById("minutes").value);
+        sec = Number(document.getElementById("seconds").value);
+    }
+
+
+</script>
+</html>

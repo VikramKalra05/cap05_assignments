@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+</head>
+<style>
+    *{
+        text-align: center;
+        margin: 10px;
+        font-weight: bold;
+    }
+</style>
+<body>
+    <h3 id="timeDisplay">0</h3>
+    <!-- start, pause, reset -->
+    <br>
+    <div>
+        <button onclick="startTime()">Start</button>
+        <button onclick="pauseTime()">Pause</button>
+        <button onclick="resetTime()">Reset</button>    
+    </div>
+</body>
+<script>
+    let time = document.getElementById("timeDisplay");
+    let isRunning = false;
+    let seconds = 0;
+    let minutes = 0; 
+    let hours = 0; 
+    let myInterval;
+
+    function startTime(){
+        if(isRunning==false){
+            isRunning = true;
+            myInterval = setInterval(function () {
+                seconds++;
+                if(minutes<1){
+                    time.textContent = seconds;
+                }
+                if(seconds<10 && seconds>0){
+                    time.textContent = "0" + seconds;
+                }
+                if(seconds==60){
+                    seconds = 0;
+                    minutes++;
+                }
+                if(minutes>=1 && minutes<10 && hours<1){
+                    time.textContent = "0" + minutes + ":" + seconds;
+                }else if(minutes>=10){
+                    time.textContent = minutes + ":" + seconds;
+                }
+                if(minutes==60){
+                    seconds = 0;
+                    minutes = 0;
+                    hours++;
+                }
+                if(hours>=1){
+                    time.textContent = "0" + hours + ":" + minutes + ":" + seconds;
+                }
+            },1000);
+        }
+        
+    }
+
+    function pauseTime(){
+        clearInterval(myInterval);
+        isRunning = false;
+    }
+
+    function resetTime(){
+        clearInterval(myInterval);
+        seconds = 0;
+        minutes = 0;
+        hours = 0;
+        isRunning = false;
+        time.textContent = 0;
+    }
+
+
+</script>
+</html>
