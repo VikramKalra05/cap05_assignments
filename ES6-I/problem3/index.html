@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 3</title>
+</head>
+<style>
+    *{
+        text-align: center;
+        background-color: saddlebrown;
+        color: white;
+    }
+</style>
+<body>
+    <h1>Convert Array of stings to lower case strings</h1>
+
+    <div>
+        <h3>Sample input = ["MA", "SA", "I", "SCH", "OOL"]</h3>
+        <h3>Check console for output</h3>
+    </div>
+</body>
+<script>
+
+    let letterToLowerCase = (x) => {
+        let upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let lower = "abcdefghijklmnopqrstuvwxyz";
+
+        for(let i=0; i<upper.length; i++){
+            if(x==upper[i]){
+                x = lower[i];
+                return x; 
+            }
+        }
+
+    };
+
+    let wordToLowerCase = (word) => {
+        let newWord = "";
+
+        for(let i=0; i<word.length; i++){
+            newWord += letterToLowerCase(word[i]);
+        }
+
+        return newWord;
+    };
+
+    let arrayToLowerCase = (arr) => {
+        let newArray = [];
+        let newWord = "";
+
+        for(let i=0; i<arr.length; i++){
+            newWord = wordToLowerCase(arr[i]);
+            newArray.push(newWord);
+        }
+
+        return newArray;
+    };
+
+    let sample = ["MA", "SA", "I", "SCH", "OOL"];
+    console.log(arrayToLowerCase(sample));
+</script>
+</html>
