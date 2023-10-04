@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Scholar</title>
+</head>
+<style>
+    *{
+        text-align: center;
+    }
+
+    #nav{
+        margin: auto;
+        /* border: 2px solid red; */
+        border-radius: 30px;
+        height: 150px;
+        margin-bottom: 20px;
+        width: 60%;
+        background-color: #48484a;
+        color: white;
+    }
+
+    input{
+        margin-bottom: 10px;
+    }
+
+    #cards{
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 30px;
+        
+    }
+
+    #cards>div{
+        padding: 20px;
+        /* border: 2px solid red;    */
+        background-color: #48484a;
+        border-radius: 30px;
+        color: white;	
+    }
+
+    img{
+        height: 200px;
+    }
+</style>
+<body>
+    <div id="nav">
+        <h1>Amazon</h1>
+        <input type="text" placeholder="Search the products" id="search">
+        <button onclick="search()">Search</button>
+        <br>
+        <select name="sort" id="sort">
+            <option value="">Sort</option>
+            <option value="lowPrice">Lower price</option>
+            <option value="highPrice">Higher price</option>
+        </select>
+    </div>
+    <div id="cards">
+
+    </div>
+</body>
+<script src="index.js"></script>
+</html>

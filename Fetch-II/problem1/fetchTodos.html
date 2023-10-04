@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos</title>
+</head>
+<style>
+    *{
+        text-align: center;
+        color: bisque;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    
+    body{
+        background-color: #3d3f4a;
+    }
+ 
+    h1{
+        font-size: 50px;
+    }
+
+    table {
+        border-collapse: collapse;
+        margin: auto;
+        width: 50%;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid lightcoral;
+        padding: 12px;
+        text-align: left;
+    }
+
+    thead{
+        background-color: darkred;
+    }
+
+    tr:nth-child(even) {
+        background-color: darkcyan;
+    }
+</style>
+<body>
+    <h1>Todos</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Title</td>
+                <td>Status</td>
+            </tr>
+        </thead>
+        <tbody id="body">
+
+        </tbody>
+    </table>    
+</body>
+<script src="index.js"></script>
+</html>
