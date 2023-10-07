@@ -1,0 +1,102 @@
+*What is React?*
+React is an open-source JavaScript library that helps developers to build more fun User
+Interface, particularly single web-page applications where you can make the UI more
+frequent and dynamic. It allows users to create UI components which are reusable
+and can manage the state of the application effeciently
+
+*Who made React?*
+
+React was developed by Jordan Walke, a software engineer of meta in 2011.
+React is still maintained by Meta and has gained significant popularity
+in the web development community.
+
+*What is Babel?* 
+
+Babel is a JavaScript compiler that allows us developers to use the latest ES features
+in our code, even if the web browser doesn't support those features. Babel transforms 
+the source code written in the latest JS to an older version which most web browsers use.
+
+*How does Babel convert HTML code in React to valid code?*
+
+Babel's primary role is to transpile the JS code, however when working with React and JSX,
+it is often used in conjunction with another tool that is JSX transpiler.
+
+1. React components often use JSX  syntax to describe the structure of UI. 
+JSX looks similar to HTML but is designed to make it easier for creating React elements.
+
+2. Babel, when configured with the appropriate plugins, can transpile JSX syntax into regular JS.
+
+3. JSX transpilation involves converting JSX elements into a series of 'React.createElement' calls.
+This function creates a virtual representation of DOM element.
+
+4. The processed JS code, which now uses 'React.createElement' calls, can be executed in 
+React. React then takes care of rendering the virtual DOM elements to the actual DOM.
+
+5. As a result, the JSX code, when processed by Babel and executed by a React, 
+leads to the creation and rendering of HTML elements on the web page.
+
+*What is ReactDOM used for? Write an example?*
+
+ReactDOM is a package in React that provides methods for interacting with the Documented 
+Object Model. Specifically used for rendering React components to the actual HTML DOM, whether 
+in a web browser or another environment that can support DOM. 
+
+For example - 
+
+let MyComponent = React.createElement("div",{
+        className: myDiv
+    },
+    "Hello, World!"
+)
+
+let rootElement = document.getElementById('root');
+
+let reactRoot = ReactDOM.createRoot(rootElement).render(MyComponent);
+
+*What are the packages that you need to import for react to work with?*
+
+You need to import import React and ReactDOM packages to work with react.
+Simply you need to attach these two script tags with src values of-
+1.  https://www.unpkg.com/react@18.2.0/umd/react.development.js
+2.  https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js
+
+And now you can use React and ReactDOM.
+
+*How do you add react to a web application?*
+
+To add react to your web application, first you need to add the scripts like we did in the previous
+question. Then you must have a root div in which you are going to use react.
+In your script, get that root div and add your content with React.CreateElement.
+Set the React root to your div with ReactDOM.createRoot and then render your content.
+You can see that react now working in your web application.
+
+*What is React.createElement?*
+
+'React.createElement' is a method of React that is used to create elements, which represent the blocks
+of a react application UI. The elements created by React are lightweight descriptions of what a component
+should be rendering. They are not actual DOM elements but they are used by React to effeciently update
+and manipulate the DOM.
+
+You can add a element with this method like this-
+
+let element = React.createElement("div",{
+    className: "Teams",
+    children: "RCB" 
+});
+
+*What are the three properties that createElement accept?*
+
+1. Type - The first argument accepted is the type of element to create. For example div or span.
+2. Props - This is optioanl but you can definetly give properties such as className, style and etc 
+to this method.
+3. Children - This is also optioanl and it is considered the third argument, which can be string, number
+or other react elements. Children basically are the content nested inside the element.
+
+*What is the meaning of render and root?*
+
+Render - In the context of React, render refers to the process of creating element tree and displaying
+on the web application. This involves taking a element and converting it into a structure 
+of DOM elements.
+
+Root - This typically refers to the root DOM where the react application is set or mounted. This is the
+main container in the HTML document that acts as the entry point for the react component trees. 
