@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMDB MOIVE APP - II</title>
+</head>
+<style>
+    *{
+        background-color: #333333;
+    }
+    #head{
+        margin: auto;
+        width: 500px;
+        border: 5px solid aqua;
+        border-radius: 20px;
+        text-align: center;
+    }
+    input, button{
+        width: 200px;
+        height: 50px;
+        color: white;
+        margin: 10px;
+    }
+    button{
+        /* background-color: blue; */
+        color: white;
+        width: 100px;
+        border-radius: 50%;
+    }
+    h1,h2   {
+        color: aliceblue;
+    }
+    #cont{
+        margin: auto;
+        margin-top: 20px;
+        display: grid;
+        width: 1000px;
+        grid-template-columns: repeat(3,1fr);
+        gap: 20px;
+    }
+    #cont>div{
+        border: 2px solid red;
+        text-align: center;
+        color: aliceblue;
+        border-radius: 30px;
+    }
+    img{
+        height: 400px;
+        max-width: 300px;
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div id="head">
+        <h1>OMDB Debouncing</h1>
+        <h2>Enter Movie Name you wish to search</h2>
+        <input type="text" id="movieName" placeholder="Movie Name">
+    </div>
+    <div id="cont">
+
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
