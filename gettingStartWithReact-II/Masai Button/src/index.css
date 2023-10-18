@@ -1,0 +1,19 @@
+*{
+  background-color: #fef9c3;
+}
+
+.btn{
+  margin: auto;
+  margin-top: 200px;
+  /* background-color: red; */
+  height: 100px;
+  width: 100px;
+}
+
+button{
+  background-color: rgb(25, 0, 255);
+  padding: 30px;
+  font-size: 30px;
+  border-radius: 20px;
+  color: white;
+}

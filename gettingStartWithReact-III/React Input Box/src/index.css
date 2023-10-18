@@ -1,0 +1,19 @@
+*{
+  background-color: rgb(41, 41, 83);
+}
+
+#root>div{
+  text-align: center;
+  color: white;
+  margin-top: 100px;
+}
+
+input, button{
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+button{
+  margin-left: 15px;
+}

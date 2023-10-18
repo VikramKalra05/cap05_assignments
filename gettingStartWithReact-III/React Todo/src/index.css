@@ -1,0 +1,27 @@
+*{
+  background-color: rgb(36, 65, 65);
+} 
+
+#root{
+  margin: auto;
+  width: 600px;
+  text-align: center;
+  color: white;
+}
+
+#root>div>ul>div{
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+  padding-left: -59px;
+  border: 1px solid red;
+  border-radius: 20px;
+  margin-bottom: 5px;
+}
+
+input, button{
+  padding: 20px;
+  border-radius: 20px;
+  margin: 10px;
+  background-color: white;
+}

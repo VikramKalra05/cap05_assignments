@@ -1,0 +1,27 @@
+*{
+  background-color: rgb(59, 78, 97);
+  color: white;
+}
+
+h1{
+  text-align: center;
+}
+
+.cont{
+  margin: auto;
+  width: 20%;
+  /* border: 1px solid red; */
+  /* padding: 20px; */
+}
+
+p{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+p:nth-child(odd){
+  color: aqua;
+}
+p:nth-child(even){
+  color: rgb(112, 248, 70);
+}

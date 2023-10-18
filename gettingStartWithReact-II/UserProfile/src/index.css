@@ -1,0 +1,58 @@
+body{
+  background-color: #c3a9ff;
+}
+
+.main{
+  display: flex;
+  justify-content: space-around;
+}
+
+.main>div{
+  border: 5px solid #6155b4;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+label, input{
+  margin: 4px;
+}
+
+.profile{
+  width: 40%;
+  padding: 20px;
+}
+
+.skills{
+  display: flex;
+}
+
+p{
+  border: 1px solid #e7eaec;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+}
+
+#name{
+  /* margin: 20px; */
+  color: #1c1c1c;
+  font-size: 40px;
+}
+
+button{
+  border-radius: 20px;
+  padding: 10px;
+  margin-left: 70px;
+}
+
+#title{
+  /* margin-left:20px; */
+  color: #1c1c1c;
+}
+
+#img{
+  height: 200px;
+  margin-right: 100px;
+}
+
+/* https://ca.slack-edge.com/T056QHT26Q0-U05CPCL8UP5-86f125afbc38-48 */

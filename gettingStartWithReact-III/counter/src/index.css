@@ -1,0 +1,16 @@
+*{
+  background-color: rgb(40, 44, 42);
+
+}
+#root>div{
+  margin-top: 150px;
+  text-align: center;
+  color: white;
+}
+
+button{
+  color: white;
+  background-color: red;
+  padding: 20px;
+  border-radius: 20px;
+}
