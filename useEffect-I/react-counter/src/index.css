@@ -1,0 +1,11 @@
+*{
+  background-color: blanchedalmond;
+}
+
+button{
+  padding: 20px;
+  margin-left: 45%;
+  margin-top: 100px;
+  background-color: chartreuse;
+  border-radius: 20px;
+}
