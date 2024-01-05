@@ -12,6 +12,11 @@ app.get("/", (req, res) => {
     res.send("WELCOME TO BOOKSTORE MANAGEMENT SYSTEM")
 })
 
+app.use((req, res) => {
+    res.status(404);
+    res.send("Invalid Endpoint")
+})
+
 app.listen(PORT, async () => {
     try {
         await connection;
