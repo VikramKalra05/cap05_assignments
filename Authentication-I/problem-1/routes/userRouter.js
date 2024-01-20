@@ -22,7 +22,7 @@ userRouter.post("/login", async (req, res) => {
         const user = await UserModel.findOne({email, password});
 
         if(user){
-            const token = jwt.sign({ email }, "myntra");
+            const token = jwt.sign({ email }, "myntra", { expiresIn: '1h' });
             res.status(200).send({"msg": "Login Successful", "token": token})
         }else{
             res.status(200).send({"msg": "Wrong Credentials"})
